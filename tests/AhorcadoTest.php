@@ -4,6 +4,13 @@ use PHPUnit\Framework\TestCase;
 
 final class EmailTest extends TestCase{
 
+    public function testAhorcadoShow(): void{
+        $game = new Ahorcado("casas", 3);
+        // $this->asserEqual( , $game->show());
+        $game->addPlay("c");
+        $this->assertFalse($game->ended());
+    }
+        
     public function testAhorcadoEndedTrue(): void{
         $game = new Ahorcado("casas", 3);
         $game->addPlay("c");

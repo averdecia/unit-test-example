@@ -34,4 +34,11 @@ class Ahorcado{
     public function win(){
         return $this->maxTry !== 0 || strlen($this->leftWords) === 0;
     }
+
+    public function show(){
+        array_map($this->word, function(){
+
+        })
+        return
+    }
 }
