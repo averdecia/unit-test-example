@@ -48,5 +48,5 @@ steps:
     serverEndpoint: 'Jenkins de Test'
     jobName: 'Test'
     captureConsole: true
-    capturePipeline: true
+    capturePipeline: false
     isParameterizedJob: false
