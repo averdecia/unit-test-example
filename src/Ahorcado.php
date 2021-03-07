@@ -19,9 +19,9 @@ class Ahorcado{
     }
 
     public function addPlay($letter): void {
-        if($this->ended()) return;
+        if($this->ended()) { return ; }
 
-        $startlen = strlen($this->leftWords);
+        $startlen = strlen($this->leftWords)
         $newWords = str_replace($letter, "", $this->leftWords);
         if( $startlen ===  strlen($newWords)){
             // No changes
@@ -37,9 +37,9 @@ class Ahorcado{
 
     public function show(){
         $result = [];
-        $word = str_split($this->word);
-        for($i = 0; $i < count($word); $i++){
-            $result[] = strpos($this->leftWords, $word[$i]) !== false ? "_" : $word[$i];
+        $wordArray = str_split($this->word);
+        for($i = 0; $i < count($wordArray); $i++){
+            $result[] = strpos($this->leftWords, $wordArray[$i]) !== false ? "_" : $wordArray[$i];
         }
         return implode(" ", $result);
     }
