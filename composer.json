@@ -1,5 +1,15 @@
 {
     "require": {
         "phpunit/phpunit": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "AhorcadoGame\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AhorcadoGame\\Tests\\": "tests/"
+        }
     }
 }

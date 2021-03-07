@@ -1,14 +1,20 @@
 <?php
+namespace AhorcadoGame\Tests;
 
 use PHPUnit\Framework\TestCase;
+use AhorcadoGame\Ahorcado;
 
-final class EmailTest extends TestCase{
+final class AhorcadoTest extends TestCase{
 
     public function testAhorcadoShow(): void{
         $game = new Ahorcado("casas", 3);
-        // $this->asserEqual( , $game->show());
+        $this->assertEquals("_ _ _ _ _", $game->show());
         $game->addPlay("c");
-        $this->assertFalse($game->ended());
+        $this->assertEquals("c _ _ _ _", $game->show());
+        $game->addPlay("f");
+        $this->assertEquals("c _ _ _ _", $game->show());
+        $game->addPlay("a");
+        $this->assertEquals("c a _ a _", $game->show());
     }
         
     public function testAhorcadoEndedTrue(): void{
@@ -19,6 +25,7 @@ final class EmailTest extends TestCase{
         $this->assertFalse($game->ended());
         $game->addPlay("s");
         $this->assertTrue($game->ended());
+        $this->assertTrue($game->win());
     }
 
     public function testAhorcadoEndedFalse(): void{
@@ -27,8 +34,9 @@ final class EmailTest extends TestCase{
         $this->assertFalse($game->ended());
         $game->addPlay("f");
         $this->assertFalse($game->ended());
-        $game->addPlay("c");
+        $game->addPlay("h");
         $this->assertTrue($game->ended());
+        $this->assertFalse($game->win());
     }
 
     public function testAhorcadoWin(): void{
