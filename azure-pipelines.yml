@@ -25,6 +25,9 @@ steps:
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
+- task: sonar-buildbreaker@8
+  inputs:
+    SonarQube: 'Sonar-UnitTests-Example'
 
 - script: |
     sudo update-alternatives --set php /usr/bin/php$(phpVersion)
