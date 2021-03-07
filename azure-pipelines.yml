@@ -46,6 +46,7 @@ steps:
 - task: JenkinsQueueJob@2
   inputs:
     serverEndpoint: 'Jenkins de Test'
-    jobName: 'Test'
-    captureConsole: false
+    jobName: 'Comentarios Test Claro drive BackEnd'
+    captureConsole: true
+    capturePipeline: true
     isParameterizedJob: false
