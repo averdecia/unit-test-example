@@ -21,7 +21,7 @@ class Ahorcado{
     public function addPlay($letter): void {
         if($this->ended()) { return ; }
 
-        $startlen = strlen($this->leftWords)
+        $startlen = strlen($this->leftWords);
         $newWords = str_replace($letter, "", $this->leftWords);
         if( $startlen ===  strlen($newWords)){
             // No changes
