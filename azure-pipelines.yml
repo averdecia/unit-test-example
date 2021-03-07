@@ -43,3 +43,10 @@ steps:
 
 - script: vendor/bin/phpunit --testdox --verbose tests
   displayName: 'Running Unit Test'
+- task: JenkinsQueueJob@2
+  inputs:
+    serverEndpoint: 'Jenkins de Test'
+    jobName: 'Test'
+    captureConsole: true
+    capturePipeline: true
+    isParameterizedJob: false
