@@ -16,7 +16,7 @@ variables:
 steps:
 - task: SonarQubePrepare@4
   inputs:
-    SonarQube: 'Sonar-UnitTests-Example'
+    SonarQube: 'Sonar-AWS-Server'
     scannerMode: 'CLI'
     configMode: 'manual'
     cliProjectKey: 'UnitTests-Example'
@@ -28,7 +28,7 @@ steps:
     pollingTimeoutSec: '300'
 - task: sonar-buildbreaker@8
   inputs:
-    SonarQube: 'Sonar-UnitTests-Example'
+    SonarQube: 'Sonar-AWS-Server'
 
 - script: |
     sudo update-alternatives --set php /usr/bin/php$(phpVersion)
